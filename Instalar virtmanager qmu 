@@ -1,0 +1,10 @@
+Instalação
+sudo apt install virt-manager
+
+Apresentando erro
+sudo apt-get install qemu-kvm libvirt-bin
+
+
+Adicionar usuário no grupo do libvirt para não precisar usar a Vm como root
+
+https://linuxdicasesuporte.blogspot.com/2018/04/maquinas-virtuais-com-virt-manager-para.html
