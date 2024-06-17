@@ -1,1 +1,1 @@
-﻿Criado esse Repositório com a finalidade de manter as minhas anotações do Curso do GNU/Linux com o Prof. Kretcheu e compartilhar com os demais participantes o conteúdo e comandos importantes para uso do Sistema Operacional. 
+﻿Criado esse Repositório com a finalidade de manter as minhas anotações do Curso do GNU/Linux com o Prof. Kretcheu e compartilhar com os demais participantes o conteúdo e comandos importantes para uso do Sistema Operacional.
