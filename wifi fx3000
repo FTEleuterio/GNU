@@ -1,0 +1,13 @@
+﻿wifi
+sudo apt install firmware-iwlwifi
+reiniciar
+
+bluethoth
+$ sudo dmesg | grep blue
+sudo inxi -E
+sudo hcitool  dev
+sudo rfkill list
+
+
+
+
