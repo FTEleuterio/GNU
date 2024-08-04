@@ -1,0 +1,52 @@
+#!/usr/bin/env bash
+
+##script fornecido pelo Blau Debxp com algumas alterações feitas para que eu tivesse algumas informações que eu quero mostrar ao carregar o meu terminal.
+
+# Include 'os-release' to grab Debian pretty name...
+
+### . /etc/os-release                                                              
+
+#váriavel para armazenar o comando para ver a data da instalação.
+datainstall=`ls -lct /etc | tail -1 | awk '{print $6, $7, $8}'`
+##cpu=`cat /proc/cpuinfo | grep -i model`
+# Styles...
+
+red="$(tput setaf 1)"
+bold="$(tput bold)"
+reset="$(tput sgr0)"
+
+
+# Obtem a largura do terminal...
+
+cols=$(tput cols)
+
+# Main...
+
+clear
+
+echo "
+$red ⢀⣴⠾⠻⢶⣦⠀$reset ${bold}$PRETTY_NAME${reset}
+$red ⣾⠁⢠⠒⠀⣿⡁$reset ${bold}Kernel:${reset} $(uname -rm)
+$red ⢿⡄⠘⠷⠚⠋⠀$reset ${bold}Uptime:${reset} $(uptime -p | cut -d' ' -f2-)
+$red ⠈⠳⣄⠀⠀⠀⠀$reset ${bold}$USER@$HOSTNAME${reset}
+        $reset ${bold}Interface: $XDG_CURRENT_DESKTOP
+"
+###Dica Blau
+cpumod=$(cat /proc/cpuinfo | grep "model name" | head -1 | cut -d' ' -f3-)
+
+echo "Processador: "$cpumod
+#Obtendo a informação daa memória
+memoria_total_gb=$(grep MemTotal /proc/meminfo | awk '{printf "%d\n", $2/1024/1024}')
+echo "Memória Ram: ${memoria_total_gbGB"
+#echo "O meu Debian foi instalado no dia " $(date -r /srv +'%d, %Y - %H:%M') 
+echo "O meu Debian foi instalado" $(date -r /srv +'%a %d/%m/%Y - %H:%M')
+#echo "Debian versão: "; (cat -z /etc/debian_version) 
+echo -n "Debian versão: "; (cat /etc/debian_version)
+
+
+# linha tracejada
+
+printf -- "-%.s" $(seq $cols)
+echo -e "\n"
+
+exit 0
